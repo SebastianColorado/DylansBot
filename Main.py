@@ -15,10 +15,14 @@ with open('cities.csv', 'rt') as csvfile:
 
 # Authenticate the twitter bot by passing the twitter api keys retrieved from
 # environment variables
-twitterApi = twitter.Api(consumer_key=os.environ['CONSUMER_KEY'],
-                         consumer_secret=os.environ['CONSUMER_SECRET'],
-                         access_token_key=os.environ['ACCESS_TOKEN'],
-                         access_token_secret=os.environ['ACCESS_TOKEN_SECRET'])
+consumer_key = os.environ['CONSUMER_KEY']
+consumer_secret = os.environ['CONSUMER_SECRET']
+access_token_key = os.environ['ACCESS_TOKEN']
+access_token_secret = os.environ['ACCESS_TOKEN_SECRET']
+
+print(consumer_key + " " + consumer_secret + " " + access_token_key + " " + access_token_secret)
+
+twitterApi = twitter.Api(consumer_key, consumer_secret, access_token_key, access_token_secret)
 
 
 def postTweet(city):
